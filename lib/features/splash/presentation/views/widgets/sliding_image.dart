@@ -17,19 +17,7 @@ class _SlidingImageState extends State<SlidingImage>
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(
-        seconds: 1,
-      ),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(-1, 0),
-      end: Offset.zero,
-    ).animate(animationController);
-
-    animationController.forward();
+    initSlidingAnimation();
   }
 
   @override
@@ -50,5 +38,19 @@ class _SlidingImageState extends State<SlidingImage>
         );
       },
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(-1, 0),
+      end: Offset.zero,
+    ).animate(animationController);
+
+    animationController.forward();
   }
 }
