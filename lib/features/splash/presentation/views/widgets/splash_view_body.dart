@@ -1,23 +1,32 @@
-import 'package:bookly_app/core/utils/assets_data.dart';
+import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_image.dart';
+import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
-        const SizedBox(
+        SlidingImage(),
+        SizedBox(
           height: 4,
         ),
-        const Text(
-          'Read Free Books',
-          textAlign: TextAlign.center,
-        ),
+        SlidingText(),
       ],
     );
   }
