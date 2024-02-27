@@ -49,9 +49,12 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  const Text(
-                    'J.K. Rowling',
-                    style: Styles.testStyle14,
+                  const Opacity(
+                    opacity: .7,
+                    child: Text(
+                      'J.K. Rowling',
+                      style: Styles.testStyle14,
+                    ),
                   ),
                   const SizedBox(
                     height: 3,
