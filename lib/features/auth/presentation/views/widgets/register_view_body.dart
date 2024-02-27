@@ -65,7 +65,7 @@ class RegisterViewBody extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(
-                  height: 24,
+                  height: 64,
                 ),
                 CustomButton(
                   text: 'SIGN UP',

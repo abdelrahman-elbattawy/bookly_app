@@ -21,11 +21,11 @@ class LoginViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(
-                  height: 240,
+                  height: 180,
                 ),
                 Image.asset(AssetsData.logo),
                 const SizedBox(
-                  height: 60,
+                  height: 80,
                 ),
                 const CustomAuthTextField(
                   hintText: 'Email Address',
@@ -40,7 +40,7 @@ class LoginViewBody extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(
-                  height: 24,
+                  height: 64,
                 ),
                 CustomButton(
                   text: 'LOG IN',
