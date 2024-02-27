@@ -1,23 +1,29 @@
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.hintText,
-    required this.iconData,
-  });
+class CustomAuthTextField extends StatelessWidget {
+  const CustomAuthTextField(
+      {super.key,
+      required this.hintText,
+      required this.iconData,
+      this.obscureText = false});
 
   final String hintText;
   final IconData iconData;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: Styles.testStyle18,
+      autocorrect: false,
+      enableSuggestions: false,
+      obscureText: obscureText,
       decoration: InputDecoration(
-          suffixIcon: Icon(
+          prefixIcon: Icon(
             iconData,
-            size: 18,
+            size: 24,
           ),
           hintText: hintText,
           enabledBorder: buildBorder(),

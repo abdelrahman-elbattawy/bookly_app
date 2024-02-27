@@ -3,6 +3,7 @@ import 'package:bookly_app/core/widgets/custom_text_field.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/search_app_bar.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/search_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -18,7 +19,10 @@ class SearchViewBody extends StatelessWidget {
               SearchAppBar(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: kPaddingView),
-                child: CustomTextField(),
+                child: CustomTextField(
+                  hintText: 'Search',
+                  iconData: FontAwesomeIcons.magnifyingGlass,
+                ),
               ),
               SizedBox(
                 height: 16,
