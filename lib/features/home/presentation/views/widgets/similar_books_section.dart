@@ -1,4 +1,3 @@
-import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -8,19 +7,17 @@ class SimilarBooksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'You can also like',
-          style: Styles.testStyle14.copyWith(
-            fontFamily: kGilroy,
-          ),
+          style: Styles.testStyle18,
         ),
-        const SizedBox(
+        SizedBox(
           height: 16,
         ),
-        const SimilarBooksListView(),
+        SimilarBooksListView(),
       ],
     );
   }

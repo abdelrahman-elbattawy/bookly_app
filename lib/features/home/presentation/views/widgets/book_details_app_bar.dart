@@ -1,19 +1,20 @@
+import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomBookDetailAppBar extends StatelessWidget {
-  const CustomBookDetailAppBar({super.key});
+class BookDetailAppBar extends StatelessWidget {
+  const BookDetailAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(left: 8, bottom: 8.0, right: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(
-              Icons.close,
+              Icons.arrow_back_sharp,
               size: 25,
             ),
           ),
@@ -22,6 +23,7 @@ class CustomBookDetailAppBar extends StatelessWidget {
             icon: const Icon(
               Icons.shopping_cart_outlined,
               size: 25,
+              color: kPrimaryColor,
             ),
           ),
         ],
