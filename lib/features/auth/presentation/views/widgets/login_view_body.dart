@@ -2,12 +2,21 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
-import 'package:bookly_app/features/auth/presentation/views/widgets/custom_auth_text_field.dart';
+import 'package:bookly_app/features/auth/presentation/views/widgets/auth_text_button.dart';
+import 'package:bookly_app/features/auth/presentation/views/widgets/auth_text_field.dart';
+import 'package:bookly_app/features/auth/presentation/views/widgets/login_text_field_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +36,7 @@ class LoginViewBody extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                const CustomAuthTextField(
-                  hintText: 'Email Address',
-                  iconData: Icons.email_rounded,
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                const CustomAuthTextField(
-                  hintText: 'Passowrd',
-                  iconData: Icons.key_rounded,
-                  obscureText: true,
-                ),
+                const LoginTextFieldSection(),
                 const SizedBox(
                   height: 64,
                 ),
@@ -46,27 +44,22 @@ class LoginViewBody extends StatelessWidget {
                   text: 'LOG IN',
                   backgroundColor: kPrimaryColor,
                   textColor: Colors.white,
-                  onPressed: () =>
-                      GoRouter.of(context).push(AppRouter.kHomeView),
+                  isLoading: isLoading,
+                  onPressed: () async {
+                    await navigateToHome(context);
+                  },
                 ),
                 const Expanded(
                   child: SizedBox(
                     height: 50,
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Don\'t have an account? '),
-                    CustomButton(
-                      text: 'SIGN UP',
-                      backgroundColor: Colors.transparent,
-                      textColor: kPrimaryColor,
-                      onPressed: () => GoRouter.of(context).push(
-                        AppRouter.kRegisterView,
-                      ),
-                    )
-                  ],
+                AuthTextButton(
+                  textTitle: 'Don\'t have an account? ',
+                  buttonTitle: 'SIGN UP',
+                  onPressed: () => GoRouter.of(context).push(
+                    AppRouter.kRegisterView,
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
@@ -76,6 +69,17 @@ class LoginViewBody extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Future<void> navigateToHome(BuildContext context) async {
+    setState(() => isLoading = true);
+    await Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        setState(() => isLoading = false);
+        GoRouter.of(context).push(AppRouter.kHomeView);
+      },
     );
   }
 }

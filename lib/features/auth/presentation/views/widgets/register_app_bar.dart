@@ -18,13 +18,11 @@ class RegisterAppBar extends StatelessWidget {
               size: 25,
             ),
           ),
-          Expanded(
-            child: Text(
-              'Sign Up',
-              style: Styles.testStyle20.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
+          Text(
+            'Log In',
+            textAlign: TextAlign.left,
+            style: Styles.testStyle20.copyWith(
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],

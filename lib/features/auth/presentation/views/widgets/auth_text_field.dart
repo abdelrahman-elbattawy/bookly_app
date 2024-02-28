@@ -2,8 +2,8 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomAuthTextField extends StatelessWidget {
-  const CustomAuthTextField(
+class AuthTextField extends StatelessWidget {
+  const AuthTextField(
       {super.key,
       required this.hintText,
       required this.iconData,
