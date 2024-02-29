@@ -3,7 +3,6 @@ import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/auth/presentation/views/widgets/auth_text_button.dart';
-import 'package:bookly_app/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:bookly_app/features/auth/presentation/views/widgets/login_text_field_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
