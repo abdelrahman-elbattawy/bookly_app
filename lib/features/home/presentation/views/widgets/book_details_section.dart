@@ -17,7 +17,7 @@ class BookDetailsSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .2),
+          padding: EdgeInsets.symmetric(horizontal: width * .25),
           child: CustomBookImage(
             borderRadius: BorderRadius.circular(16),
             imageUrl:
@@ -56,7 +56,9 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 37,
         ),
-        const BookActions(),
+        BookActions(
+          bookModel: bookModel,
+        ),
       ],
     );
   }

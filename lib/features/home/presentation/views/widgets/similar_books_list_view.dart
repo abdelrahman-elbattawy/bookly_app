@@ -14,7 +14,7 @@ class SimilarBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .13,
       child: BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
         builder: (context, state) {
           if (state is SimilarBooksSuccess) {
