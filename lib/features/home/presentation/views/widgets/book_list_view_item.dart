@@ -18,14 +18,17 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetails),
+      onTap: () => GoRouter.of(context).push(
+        AppRouter.kBookDetails,
+        extra: bookModel,
+      ),
       child: SizedBox(
         height: 120,
         child: Row(
           children: [
             CustomBookImage(
-              circularRadius: 8,
-              imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+              borderRadius: BorderRadius.circular(8),
+              imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ?? '',
             ),
             const SizedBox(
               width: 30,

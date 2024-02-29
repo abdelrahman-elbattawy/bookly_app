@@ -5,16 +5,16 @@ class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
     required this.imageUrl,
-    this.circularRadius = 16.0,
+    required this.borderRadius,
   });
 
   final String imageUrl;
-  final double circularRadius;
+  final BorderRadius borderRadius;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(circularRadius),
+      borderRadius: borderRadius,
       child: AspectRatio(
         aspectRatio: .66,
         child: CachedNetworkImage(
