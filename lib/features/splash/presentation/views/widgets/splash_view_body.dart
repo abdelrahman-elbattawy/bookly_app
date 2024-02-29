@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_image.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SlidingImage(),
+        SlidingImage(
+          imagePath: AssetsData.logo,
+        ),
         SizedBox(
           height: 4,
         ),
-        SlidingText(),
+        SlidingText(
+          text: 'Read Free Books',
+        ),
       ],
     );
   }

@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class SlidingText extends StatefulWidget {
   const SlidingText({
     super.key,
+    required this.text,
+    this.textColor = Colors.green,
   });
+
+  final String text;
+  final Color textColor;
 
   @override
   State<SlidingText> createState() => _SlidingTextState();
@@ -35,9 +40,12 @@ class _SlidingTextState extends State<SlidingText>
         builder: (context, _) {
           return SlideTransition(
             position: slidingAnimation,
-            child: const Text(
-              'Read Free Books',
+            child: Text(
+              widget.text,
               textAlign: TextAlign.center,
+              style: TextStyle(
+                color: widget.textColor,
+              ),
             ),
           );
         });

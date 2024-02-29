@@ -1,8 +1,9 @@
-import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
 class SlidingImage extends StatefulWidget {
-  const SlidingImage({super.key});
+  const SlidingImage({super.key, required this.imagePath});
+
+  final String imagePath;
 
   @override
   State<SlidingImage> createState() => _SlidingImageState();
@@ -34,7 +35,7 @@ class _SlidingImageState extends State<SlidingImage>
       builder: (context, _) {
         return SlideTransition(
           position: slidingAnimation,
-          child: Image.asset(AssetsData.logo),
+          child: Image.asset(widget.imagePath),
         );
       },
     );
