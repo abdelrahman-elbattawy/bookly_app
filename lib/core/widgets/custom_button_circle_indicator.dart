@@ -1,8 +1,8 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomCircleProgressIndicator extends StatelessWidget {
-  const CustomCircleProgressIndicator({
+class CustomButtonCircleIndicator extends StatelessWidget {
+  const CustomButtonCircleIndicator({
     super.key,
     required this.textColor,
   });

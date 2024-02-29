@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widgets/custom_circle_progress_indicator.dart';
+import 'package:bookly_app/core/widgets/custom_button_circle_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -40,7 +40,7 @@ class CustomButton extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               )
-            : CustomCircleProgressIndicator(
+            : CustomButtonCircleIndicator(
                 textColor: textColor,
               ),
       ),
