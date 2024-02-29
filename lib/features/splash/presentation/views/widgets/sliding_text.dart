@@ -4,7 +4,7 @@ class SlidingText extends StatefulWidget {
   const SlidingText({
     super.key,
     required this.text,
-    this.textColor = Colors.green,
+    this.textColor = Colors.white,
   });
 
   final String text;

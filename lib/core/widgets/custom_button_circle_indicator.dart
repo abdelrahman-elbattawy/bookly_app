@@ -14,8 +14,12 @@ class CustomButtonCircleIndicator extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const CircularProgressIndicator(
-          color: Colors.white,
+        const SizedBox(
+          height: 28,
+          width: 28,
+          child: CircularProgressIndicator(
+            color: Colors.white,
+          ),
         ),
         const SizedBox(
           width: 24,

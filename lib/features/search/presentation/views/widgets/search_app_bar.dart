@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SearchAppBar extends StatelessWidget {
   const SearchAppBar({super.key});
@@ -12,9 +13,9 @@ class SearchAppBar extends StatelessWidget {
         children: [
           IconButton(
             padding: EdgeInsets.zero,
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => GoRouter.of(context).pop(),
             icon: const Icon(
-              Icons.arrow_back_sharp,
+              Icons.arrow_back_ios,
               size: 25,
             ),
           ),

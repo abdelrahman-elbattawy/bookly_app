@@ -28,7 +28,8 @@ class BookListViewItem extends StatelessWidget {
           children: [
             CustomBookImage(
               borderRadius: BorderRadius.circular(8),
-              imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ?? '',
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  kDefaultImageUrl,
             ),
             const SizedBox(
               width: 30,
@@ -38,7 +39,7 @@ class BookListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    bookModel.volumeInfo!.title!,
+                    bookModel.volumeInfo.title!,
                     style: Styles.testStyle20.copyWith(
                       fontFamily: kGTSectraFine,
                     ),
@@ -51,7 +52,7 @@ class BookListViewItem extends StatelessWidget {
                   Opacity(
                     opacity: .7,
                     child: Text(
-                      bookModel.volumeInfo!.authors![0],
+                      bookModel.volumeInfo.authors![0],
                       style: Styles.testStyle14,
                     ),
                   ),
@@ -68,8 +69,8 @@ class BookListViewItem extends StatelessWidget {
                         ),
                       ),
                       BookRating(
-                        rating: bookModel.volumeInfo!.averageRating ?? 0,
-                        coutRating: bookModel.volumeInfo!.ratingsCount ?? 0,
+                        rating: bookModel.volumeInfo.averageRating ?? 0,
+                        coutRating: bookModel.volumeInfo.ratingsCount ?? 0,
                       ),
                     ],
                   ),

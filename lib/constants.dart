@@ -6,3 +6,5 @@ const kTransitionDuration = Duration(microseconds: 250);
 const kGTSectraFine = 'GT Sectra Fine';
 const kGilroy = 'Gilroy';
 const double kPaddingView = 16;
+
+const kDefaultImageUrl = 'https://twinklelearning.in/uploads/noimage.jpg';

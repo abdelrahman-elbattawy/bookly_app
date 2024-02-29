@@ -1,5 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BookDetailAppBar extends StatelessWidget {
   const BookDetailAppBar({super.key});
@@ -12,9 +13,9 @@ class BookDetailAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => GoRouter.of(context).pop(),
             icon: const Icon(
-              Icons.arrow_back_sharp,
+              Icons.arrow_back_ios,
               size: 25,
             ),
           ),
