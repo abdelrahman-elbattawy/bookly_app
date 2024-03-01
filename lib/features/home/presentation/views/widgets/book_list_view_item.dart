@@ -52,8 +52,10 @@ class BookListViewItem extends StatelessWidget {
                   Opacity(
                     opacity: .7,
                     child: Text(
-                      bookModel.volumeInfo.authors![0],
+                      overflow: TextOverflow.ellipsis,
+                      bookModel.volumeInfo.authors?[0] ?? '',
                       style: Styles.testStyle14,
+                      maxLines: 1,
                     ),
                   ),
                   const SizedBox(
