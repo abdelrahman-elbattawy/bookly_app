@@ -9,6 +9,25 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.errMessage);
 
+  factory ServerFailure.fromFirebase(String errCode) {
+    switch (errCode) {
+      case 'user-not-found':
+        return ServerFailure('No user found for that email.');
+
+      case 'wrong-password':
+        return ServerFailure('Wrong password provided for that user.');
+
+      case 'weak-password':
+        return ServerFailure('The password provided is too weak.');
+
+      case 'email-already-in-use':
+        return ServerFailure('The account already exists for that email.');
+
+      default:
+        return ServerFailure('Opps There was an Error, Please try again');
+    }
+  }
+
   factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:

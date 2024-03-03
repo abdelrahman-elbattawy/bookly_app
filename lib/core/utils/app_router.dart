@@ -1,4 +1,6 @@
 import 'package:bookly_app/core/utils/service_locator.dart';
+import 'package:bookly_app/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:bookly_app/features/auth/presentation/manger/auth_cubit/auth_cubit.dart';
 import 'package:bookly_app/features/auth/presentation/views/login_view.dart';
 import 'package:bookly_app/features/auth/presentation/views/register_view.dart';
 import 'package:bookly_app/core/models/book_model/book_model.dart';
@@ -52,11 +54,17 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kLoginView,
-        builder: (context, state) => const LoginView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => AuthCubit(AuthRepoImpl()),
+          child: const LoginView(),
+        ),
       ),
       GoRoute(
         path: kRegisterView,
-        builder: (context, state) => const RegisterView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => AuthCubit(AuthRepoImpl()),
+          child: const RegisterView(),
+        ),
       ),
     ],
   );

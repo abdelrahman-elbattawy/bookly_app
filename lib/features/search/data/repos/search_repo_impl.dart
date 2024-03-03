@@ -21,7 +21,6 @@ class SearchRepoImpl implements SearchRepo {
 
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
-        print(bookName);
       }
 
       return right(books);
