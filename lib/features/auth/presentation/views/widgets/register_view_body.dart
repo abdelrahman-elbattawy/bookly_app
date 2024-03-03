@@ -69,18 +69,18 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                           errMessage: 'Created user successfully!',
                         );
 
-                        isLoading = false;
-
                         await navigateToHome(
                             context: context, user: state.user);
-                      } else if (state is RegisterFailure) {
-                        isLoading = false;
 
+                        isLoading = false;
+                      } else if (state is RegisterFailure) {
                         CustomSnakBar.showSnack(
                           context: context,
                           snackBarType: SnackBarType.error,
                           errMessage: state.errMessage,
                         );
+
+                        isLoading = false;
                       } else {
                         isLoading = true;
                       }

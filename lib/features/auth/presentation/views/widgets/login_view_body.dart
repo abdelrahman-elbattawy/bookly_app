@@ -61,18 +61,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           errMessage: 'Login successfully!',
                         );
 
-                        isLoading = false;
-
                         await navigateToHome(
                             context: context, user: state.user);
-                      } else if (state is LoginFailure) {
-                        isLoading = false;
 
+                        isLoading = false;
+                      } else if (state is LoginFailure) {
                         CustomSnakBar.showSnack(
                           context: context,
                           snackBarType: SnackBarType.error,
                           errMessage: state.errMessage,
                         );
+
+                        isLoading = false;
                       } else {
                         isLoading = true;
                       }
