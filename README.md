@@ -18,7 +18,7 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [VS Code](https://code.visualstudio.com/) installed.
+Before starting, you need to have [Git](https://git-scm.com) and [VS Code](https://code.visualstudio.com/) installed.
 
 ```bash
 
