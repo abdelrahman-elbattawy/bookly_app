@@ -13,6 +13,7 @@ The following tools were used in this project:
 - [Flutter](https://docs.flutter.dev/)
 - [VS Code](https://code.visualstudio.com/)
 - [Google API](https://developers.google.com/books)
+- [Dio](https://pub.dev/packages/dio)
 
 
 ## :white_check_mark: Requirements ##
