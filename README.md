@@ -1,16 +1,27 @@
-# bookly_app
+# Bookly App
 
-A new Flutter project.
 
-## Getting Started
+## :dart: About ##
 
-This project is a starting point for a Flutter application.
+Bookly App using Flutter with MVVM Pattern and Statemangment (BLoC). The Books included in the app are from Google API. using Firebase authentication.
 
-A few resources to get you started if this is your first Flutter project:
+## :rocket: Technologies ##
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The following tools were used in this project:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Dart](https://dart.dev/guides)
+- [Flutter](https://docs.flutter.dev/)
+- [VS Code](https://code.visualstudio.com/)
+- [Google API](https://developers.google.com/books)
+
+
+## :white_check_mark: Requirements ##
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [VS Code](https://code.visualstudio.com/) installed.
+
+```bash
+
+# Clone this project
+
+$ git clone https://github.com/abdelrahman-elbattawy/bookly_app.git
+```
