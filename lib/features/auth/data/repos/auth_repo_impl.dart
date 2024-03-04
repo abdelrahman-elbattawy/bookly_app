@@ -19,15 +19,13 @@ class AuthRepoImpl implements AuthRepo {
       final user = UserModel(userEmail: email);
 
       return right(user);
+    } on FirebaseAuthException catch (e) {
+      return left(
+        ServerFailure.fromFirebase(
+          e.code,
+        ),
+      );
     } catch (e) {
-      if (e is FirebaseAuthException) {
-        return left(
-          ServerFailure.fromFirebase(
-            e.code,
-          ),
-        );
-      }
-
       return left(
         ServerFailure(
           e.toString(),
@@ -48,15 +46,13 @@ class AuthRepoImpl implements AuthRepo {
       final user = UserModel(userEmail: email);
 
       return right(user);
+    } on FirebaseAuthException catch (e) {
+      return left(
+        ServerFailure.fromFirebase(
+          e.code,
+        ),
+      );
     } catch (e) {
-      if (e is FirebaseAuthException) {
-        return left(
-          ServerFailure.fromFirebase(
-            e.code,
-          ),
-        );
-      }
-
       return left(
         ServerFailure(
           e.toString(),

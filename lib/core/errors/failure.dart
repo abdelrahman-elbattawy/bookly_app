@@ -23,6 +23,9 @@ class ServerFailure extends Failure {
       case 'email-already-in-use':
         return ServerFailure('The account already exists for that email.');
 
+      case 'invalid-credential':
+        return ServerFailure('Email or Password is invalid!');
+
       default:
         return ServerFailure('Opps There was an Error, Please try again');
     }
